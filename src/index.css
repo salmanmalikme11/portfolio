@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 248 250 252;
+  --surface: 255 255 255;
+  --fg: 15 23 42;
+  --muted: 71 85 105;
+  --line: 226 232 240;
+  --accent: 8 145 178;
+  --accent2: 124 58 237;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: 6 8 15;
+  --surface: 14 17 28;
+  --fg: 226 232 240;
+  --muted: 148 163 184;
+  --line: 30 36 52;
+  --accent: 34 211 238;
+  --accent2: 167 139 250;
+  color-scheme: dark;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-bg font-sans text-fg antialiased transition-colors duration-300; }
+::selection { background: rgb(var(--accent) / 0.3); }
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+  .card { @apply relative rounded-2xl border border-line bg-surface/60 backdrop-blur-sm; }
+  .chip { @apply rounded-full border border-line bg-surface px-3 py-1 font-mono text-xs text-muted; }
+  .btn { @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-200; }
+  .btn-primary { @apply btn bg-gradient-to-r from-accent to-accent2 text-white shadow-lg shadow-accent/20 hover:-translate-y-0.5 hover:shadow-accent/40; }
+  .btn-ghost { @apply btn border border-line bg-surface/60 hover:-translate-y-0.5 hover:border-accent/60; }
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, rgb(var(--accent)), rgb(var(--accent2)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgb(var(--line) / 0.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--line) / 0.6) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+/* Mouse-following glow on cards (set --mx / --my from JS) */
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(var(--accent) / 0.12), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.spotlight:hover::before { opacity: 1; }
+
+/* Keep Chrome's autofill from painting inputs light blue */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: rgb(var(--fg));
+  box-shadow: 0 0 0 1000px rgb(var(--bg)) inset;
+  transition: background-color 9999s;
+}
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 40s linear infinite; }
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee { animation: none; }
+}

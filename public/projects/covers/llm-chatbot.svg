@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#090d18"/><stop offset="1" stop-color="#0f1626"/></linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.2" r=".65"><stop offset="0" stop-color="#fb7185" stop-opacity=".35"/><stop offset="1" stop-color="#fb7185" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#fff" stroke-opacity=".05"/></pattern>
+</defs>
+<rect width="400" height="225" fill="url(#bg)"/><rect width="400" height="225" fill="url(#grid)"/><rect width="400" height="225" fill="url(#glow)"/>
+<g font-family="ui-monospace, Consolas, monospace">
+<rect x="70" y="28" width="260" height="170" rx="12" fill="#111827" stroke="#1f2937"/><path d="M70 52V40a12 12 0 0 1 12-12h236a12 12 0 0 1 12 12v12z" fill="#1f2937"/><circle cx="86" cy="40" r="4" fill="#f87171"/><circle cx="98" cy="40" r="4" fill="#fbbf24"/><circle cx="110" cy="40" r="4" fill="#34d399"/><text x="200" y="44" text-anchor="middle" font-size="9" fill="#6b7280">localhost:8501</text><rect x="196" y="64" width="120" height="24" rx="10" fill="#fb7185"/><text x="256" y="80" text-anchor="middle" font-size="9" fill="#fff">introduce yourself</text><circle cx="90" cy="108" r="9" fill="#fbbf24" fill-opacity=".9"/><rect x="106" y="98" width="176" height="52" rx="10" fill="#1f2937"/><rect x="118" y="110" width="146" height="5" rx="2.5" fill="#4b5563"/><rect x="118" y="121" width="128" height="5" rx="2.5" fill="#4b5563"/><rect x="118" y="132" width="92" height="5" rx="2.5" fill="#4b5563"/><rect x="84" y="164" width="232" height="22" rx="11" fill="#0b0f19" stroke="#fb7185" stroke-opacity=".6"/><text x="98" y="178" font-size="9" fill="#6b7280">Type your message…</text><path d="M296 169l12 6-12 6z" fill="#fb7185"/>
+</g>
+</svg>
