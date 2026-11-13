@@ -25,12 +25,15 @@ Us file ke shuru mein guide likhi hai. Save karte hi browser update ho jata hai.
 | "Open to work" band karna | `profile.available: false` |
 | Colors badalne | `src/index.css` → `--accent` / `--accent2` (RGB numbers) |
 
-## Live site
+## Online publish karna (Vercel, free)
 
-**https://salmanmalikme11.github.io**
+Code GitHub par hai: https://github.com/salmanmalikme11/portfolio
 
-Site GitHub Pages par hai. `main` branch par har push ke baad GitHub Actions
-(`.github/workflows/deploy.yml`) khud build karke site update kar deta hai, 1-2 minute lagte hain.
+1. [vercel.com](https://vercel.com) par **Continue with GitHub** se login karein.
+2. **Add New → Project** → `portfolio` repo ke saamne **Import**.
+3. Settings khud detect ho jati hain (Vite). Bas **Deploy** dabayein.
+
+Uske baad har push par site khud update ho jayegi:
 
 ```bash
 git add .

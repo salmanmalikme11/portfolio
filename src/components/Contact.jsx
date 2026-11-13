@@ -58,7 +58,7 @@ export default function Contact({ notify }) {
   }
 
   const links = [
-    { icon: Phone, label: profile.phone, href: `tel:${profile.phone.replace(/-/g, '')}` },
+    ...(profile.phone ? [{ icon: Phone, label: profile.phone, href: `tel:${profile.phone.replace(/-/g, '')}` }] : []),
     { icon: MapPin, label: profile.location },
     { icon: Linkedin, label: 'LinkedIn', href: profile.linkedin },
     { icon: Github, label: 'GitHub', href: profile.github },

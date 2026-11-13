@@ -38,7 +38,7 @@ export default function Footer() {
             <p className="text-xs font-medium uppercase tracking-wider text-muted">Contact</p>
             <ul className="mt-4 space-y-2.5 text-sm text-muted">
               <li><a href={`mailto:${profile.email}`} className="break-all transition hover:text-accent">{profile.email}</a></li>
-              <li>{profile.phone}</li>
+              {profile.phone && <li>{profile.phone}</li>}
               <li><a href={profile.cv} download className="transition hover:text-accent">Download CV →</a></li>
             </ul>
           </div>

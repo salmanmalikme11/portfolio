@@ -41,7 +41,7 @@ export const profile = {
   status: 'BS Computer Science Graduate',
   available: true, // false karein to "Open to work" wali chalti patti chhup jayegi
   email: 'salmanmalikme11@gmail.com',
-  phone: '+92-3075055599',
+  phone: '', // number dikhana ho to yahan likh dein, jaise '+92-3XXXXXXXXX'. Khali = website par nahi dikhega
   // TODO: apne asli profile links yahan daalein
   linkedin: 'https://www.linkedin.com/in/salman-ahmed-a6b164362',
   github: 'https://github.com/salmanmalikme11',
